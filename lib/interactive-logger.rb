@@ -64,6 +64,7 @@ class InteractiveLogger
 
     @current_step.nil?
   rescue => e
+    raise e
     @current_step.failure "Error while performing step: #{str}\n  #{e.class}: #{e.message}"
     print "\n"
     raise
